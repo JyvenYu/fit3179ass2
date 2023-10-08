@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Air Pollution Metrics Per Capita by Year",
   "data": {
     "url": "https://raw.githubusercontent.com/JyvenYu/fit3179ass2/main/global%20air-pollution%20per%20capita.csv"
   },
