@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Multiple Visualisations: Week 9 & Week 10 </title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+</head>
+
+<body>
+
+  <div class="page">
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Multiple Visualisations</h1>
+        <p>This includes the two visualizations from week 9 and week 10 to demonstrates combining vis.</p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group for week9.json -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>Week 9 Visualisation</h2>
+      </div>
+      <div class="pure-u-1-1">
+        <div id="week9" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group for week10.json -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>Week 10 Visualisation</h2>
+      </div>
+      <div class="pure-u-1-1">
+        <div id="week10" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+
+    var specWeek9 = "./week9.json";
+    var specWeek10 = "./week10.json";
+
+    vegaEmbed('#week9', specWeek9, { "actions": false })
+      .then(function (result) {
+        // Access the Vega view instance if needed
+      }).catch(console.error);
+
+    vegaEmbed('#week10', specWeek10, { "actions": false })
+      .then(function (result) {
+        // Access the Vega view instance if needed
+      }).catch(console.error);
+  </script>
+</body>
+
+</html>
