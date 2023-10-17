@@ -1,6 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Air Pollution Metrics Per Capita",
+  "title": {
+    "text": "Air Pollution Metrics Per Capita by Pollutant",
+    "fontSize": 20
+  },
   "width": 800,
   "height": 400,
   "params": [
@@ -10,7 +13,13 @@
         "input": "select",
         "options": [
           "Nitrogen oxide (NOx) per capita ",
-          "Sulphur dioxide (SO₂) per capita"
+          "Sulphur dioxide (SO₂) per capita",
+          "Carbon monoxide (CO) per capita",
+          "Organic carbon (OC) per capita ",
+          "NMVOCs per capita",
+          "Black carbon (BC) per capita",
+          "Ammonia (NH₃) per capita"
+
         ],
         "name": "Select Pollutant: "
       },
@@ -22,33 +31,49 @@
     "url": "https://raw.githubusercontent.com/JyvenYu/fit3179ass2/main/ne_110m.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
-  "transform": [
+  "layer": [
     {
-      "lookup": "properties.NAME_EN",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/JyvenYu/fit3179ass2/main/global%20air-pollution%20per%20capita.csv"
-        },
-        "key": "Country",
-        "fields": [
-          "Nitrogen oxide (NOx) per capita ",
-          "Sulphur dioxide (SO₂) per capita"
-        ]
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E0E0E0",  
+        "stroke": "white"
       }
     },
-    {"calculate": "datum[SelectPollutant]", "as": "SelectedPollutantValue"}
+    {
+      "transform": [
+        {
+          "lookup": "properties.NAME_EN",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/JyvenYu/fit3179ass2/main/global%20air-pollution%20per%20capita.csv"
+            },
+            "key": "Country",
+            "fields": [
+              "Nitrogen oxide (NOx) per capita ",
+          "Sulphur dioxide (SO₂) per capita",
+          "Carbon monoxide (CO) per capita",
+          "Organic carbon (OC) per capita ",
+          "NMVOCs per capita",
+          "Black carbon (BC) per capita",
+          "Ammonia (NH₃) per capita"
+            ]
+          }
+        },
+        {"calculate": "datum[SelectPollutant]", "as": "SelectedPollutantValue"}
+      ],
+      "mark": {"type": "geoshape"},
+      "encoding": {
+        "color": {
+          "field": "SelectedPollutantValue",
+          "type": "quantitative",
+          "scale": {"domain": [0, 200], "scheme": "orangered"}
+        },
+        "tooltip": [
+          {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+          {"field": "SelectedPollutantValue", "type": "quantitative"}
+        ]
+      }
+    }
   ],
-  "mark": {"type": "geoshape"},
-  "encoding": {
-    "color": {
-      "field": "SelectedPollutantValue",
-      "type": "quantitative",
-      "scale": {"domain": [0, 100], "scheme": "orangered"}
-    },
-    "tooltip": [
-      {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-      {"field": "SelectedPollutantValue", "type": "quantitative"}
-    ]
-  },
   "config": {}
 }
