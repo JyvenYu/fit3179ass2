@@ -1,5 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/JyvenYu/fit3179ass2/main/global%20air-pollution%20per%20capita.csv"
+  },
   "width": 800,
   "height": 400,
   "params": [
