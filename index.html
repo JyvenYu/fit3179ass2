@@ -2,7 +2,6 @@
 <html>
 
 <head>
-  <title>Multiple Visualisations: Vis1 & Vis2 </title>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -34,7 +33,7 @@
     </div>
     <!-- end pure grid group -->
 
-    <!-- pure grid group for Vis1.json -->
+    <!-- pure grid group for vis1.json -->
     <div class="pure-g">
       <div class="pure-u-1-1">
         <h2>Vis1 Visualisation</h2>
@@ -45,7 +44,7 @@
     </div>
     <!-- end pure grid group -->
 
-    <!-- pure grid group for Vis2.json -->
+    <!-- pure grid group for vis2.json -->
     <div class="pure-g">
       <div class="pure-u-1-1">
         <h2>Vis2 Visualisation</h2>
@@ -56,12 +55,22 @@
     </div>
     <!-- end pure grid group -->
 
+    <!-- pure grid group for vis3.json -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>Vis3 Visualisation</h2>
+      </div>
+      <div class="pure-u-1-1">
+        <div id="vis3" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
   </div> <!-- end page -->
 
-  <script type="text/javascript">
-
-    var specVis1 = "./Vis1.json";
-    var specVis2 = "./Vis2.json";
+   <script type="text/javascript">
+    var specVis1 = "./vis1.json";
+    var specVis2 = "./vis2.json";
+    var specVis3 = "./vis3.json";  // New spec for Vis3
 
     vegaEmbed('#vis1', specVis1, { "actions": false })
       .then(function (result) {
@@ -69,6 +78,12 @@
       }).catch(console.error);
 
     vegaEmbed('#vis2', specVis2, { "actions": false })
+      .then(function (result) {
+        // Access the Vega view instance if needed
+      }).catch(console.error);
+
+    // New block to render Vis3
+    vegaEmbed('#vis3', specVis3, { "actions": false })
       .then(function (result) {
         // Access the Vega view instance if needed
       }).catch(console.error);
