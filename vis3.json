@@ -1,9 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Comparison of Air Pollution Metrics for Selected Countries and Year",
-    "fontSize": 20
-  },
   "data": {
     "url": "https://raw.githubusercontent.com/JyvenYu/fit3179ass2/main/global%20air-pollution%20per%20capita.csv"
   },
