@@ -246,7 +246,7 @@
           "Zimbabwe"],
         "name": "Select Country 1: "
       },
-      "value": "Afghanistan"
+      "value": "Malaysia"
     },
     {
       "name": "SelectedCountry2",
@@ -484,7 +484,7 @@
           "Zimbabwe"],
         "name": "Select Country 2: "
       },
-      "value": "Albania"
+      "value": "Australia"
     },
     {
       "name": "SelectedYear",
