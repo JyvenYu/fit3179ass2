@@ -1,9 +1,5 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Air Pollution Metrics Per Capita by Pollutant",
-    "fontSize": 20
-  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",,
   "width": 800,
   "height": 400,
   "params": [
