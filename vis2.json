@@ -14,7 +14,7 @@
       "name": "SelectedCountry",
       "bind": {
         "input": "select",
-        "options": ["Afghanistan",
+        "options": ["Malaysia",
 "Africa",
 "Albania",
 "Algeria",
